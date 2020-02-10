@@ -1,0 +1,38 @@
+#include <Arduino.h>
+
+#ifndef HEADERFILE_H
+#define HEADERFILE_H
+
+template <typename T>
+class Queue {
+
+  private:
+    std::vector<T> queue;
+
+  public:
+    void push(T val) {
+      this->queue.insert(this->queue.end(), val);
+    };
+
+    void pop() {
+      this->queue.erase(this->queue.begin());
+    };
+
+    T front() {
+      return *this->queue.begin();
+    };
+
+    unsigned long int size() {
+     return queue.size();
+    };
+
+    T at(unsigned long int idx) {
+      return queue[idx];
+    };
+
+    void erase_at(unsigned long int idx) {
+      this->queue.erase(this->queue.begin()+idx);
+    }
+};
+
+#endif

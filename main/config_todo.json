@@ -1,0 +1,70 @@
+{
+  "wifi_config": {
+    "ssid": "kartik_n",
+    "password": ""
+  },
+  "schedule0": {
+    "interval": 5,
+    "events": {
+      "http": {
+        "type": "get",
+        "url": "http://remote-builder:115c084e4dec6e254eab37fa5cff5e21c0@192.168.43.223:8080/job/wireless_notification_device/lastBuild/api/json",
+        "post_event": {
+          "100": {
+            "led": [0, "blue", "blink"]
+          },
+          "201": {
+            "led": [0, "green", "blink"]
+          },
+          "400": {
+            "led": [0, "red", "blink"]
+          }
+        }
+      }
+    }
+  },
+  "button0": {
+    "click": {
+      "ir": {
+        "blast":"up"
+      },
+      "led": [1, "red", "blink"]
+    },
+    "double_click": {
+      "led": [1, "blue", "blink"]
+    }
+  },
+  "button2": {
+    "click": {
+      "ir": {
+        "blast":"down"
+      },
+      "led": [1, "blue", "blink"]
+    },
+    "long_press": {
+      "http": {
+        "type": "post",
+        "url": "http://remote-builder:115c084e4dec6e254eab37fa5cff5e21c0@192.168.43.223:8080/job/wireless_notification_device/build",
+        "pre_event": {
+          "led": [0, "blue", "blink"]
+        },
+        "post_event": {
+          "success": {
+            "led": [0, "green", "blink"]
+          },
+          "fail": {
+            "led": [0, "red", "blink"]
+          }
+        }
+      }
+    }
+  },
+  "button1": {
+    "long_press": {
+      "ir": {
+        "blast":"on_off"
+      },
+      "led": [1, "green", "blink"]
+    }
+  }
+}
