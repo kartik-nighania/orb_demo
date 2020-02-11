@@ -6,3 +6,19 @@ api token: 11cd8452a3481e712d540c887bb34e0dd4
 curl --request GET http://admin:11cd8452a3481e712d540c887bb34e0dd4@192.168.43.84:8080/job/critical_pipeline/lastBuild/api/json
 
 curl --request POST http://admin:11cd8452a3481e712d540c887bb34e0dd4@192.168.43.84:8080/job/critical_pipeline/build
+
+
+
+
+this pcs
+
+take the initial username:admin password:c926c1c0825b44e6a2cde2c6d1231f22
+
+115c084e4dec6e254eab37fa5cff5e21c0
+
+
+
+curl --request POST http://remote-builder:115c084e4dec6e254eab37fa5cff5e21c0@192.168.43.235:8080/job/wireless_notification_device/build
+
+
+curl --request GET http://remote-builder:115c084e4dec6e254eab37fa5cff5e21c0@192.168.43.235:8080/job/wireless_notification_device/lastBuild/api/json
